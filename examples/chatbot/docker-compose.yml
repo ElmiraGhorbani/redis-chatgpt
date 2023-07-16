@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+    client_chatgpt:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: lient_chatgpt:v${IMAGE_VERSION}
+        hostname: client_chatgpt
+        container_name: client_chatgpt
+        restart: always
+        networks:
+            - services_net
+        links:
+            - "redis:redis_chatgpt"
+        ports:
+            - 8012:8000
+
+    redis:
+        image: redis:6.2
+        command: redis-server --save 60 1 --loglevel warning  --appendonly yes
+        container_name: redis_chatgpt
+        restart: always
+
+        networks:
+            - services_net
+
+        environment:
+            - REDIS_REPLICATION_MODE=master
+
+networks:
+  services_net:
+    external: true
