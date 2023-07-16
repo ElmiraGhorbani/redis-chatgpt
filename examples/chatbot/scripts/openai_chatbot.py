@@ -5,7 +5,7 @@ import openai
 from .error_handler import retry_on_openai_errors
 
 openai.api_key = os.environ.get(
-    "OPENAI_API_KEY", "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"
+    "OPENAI_API_KEY", ""
 )
 
 
@@ -17,7 +17,6 @@ PROMPT = """Assistant is a large language model trained by OpenAI.
 
     Overall, Assistant is a powerful tool that can help with a wide range of tasks and provide valuable insights and information on a wide range of topics. Whether you need help with a specific question or just want to have a conversation about a particular topic, Assistant is here to assist.
 
-    Human: {}
     Assistant:"""
 
 class ChatApp:
@@ -64,10 +63,10 @@ class ChatApp:
             messages = chat_history
         else:
             messages = [
-                {"role": "system", "content": self.prompt.format(user_input)},
+                {"role": "system", "content": self.prompt},
             ]
 
-        messages.append({"role": "user", "content": ""})
+        messages.append({"role": "user", "content": user_input})
 
         response = openai.ChatCompletion.create(
             model=self.model,
