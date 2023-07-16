@@ -1,6 +1,9 @@
 # Redis Chatgpt
-Allows to save chat history of converation.
+This package is a useful tool specifically developed for effectively handling chat message history. This Python package's primary goal is to provide a reliable, efficient, and simple method to store chat logs in a Redis database.
 
+redis_chatgpt makes use of Redis, a fast, efficient, and highly scalable in-memory data structure store. By organizing and preserving the chat message history in Redis, users can retrieve message history promptly and easily with the best performance.
+
+This package is the perfect solution if you need to store and recover chat histories effortlessly from the Redis Database. With redis_chatgpt, you can streamline your chat log management tasks while becoming more productive and efficient with your resources.
 
 # Getting started
 ```
