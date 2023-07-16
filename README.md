@@ -47,7 +47,7 @@ Truncate history(conversation)
 # You can choose whether to update the Redis database or 
 # not by specifying the 'overwrite' parameter (boolean).
 
-redis_db.truncate_conversation(redis_key, overwrite=True)
+data = redis_db.truncate_conversation(redis_key, overwrite=True)
 
 ```
 
