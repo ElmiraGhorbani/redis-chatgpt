@@ -42,10 +42,11 @@ chat_history = redis_db.get_data(redis_key)
 
 ```
 
+Truncate history(conversation)
 ```
-# truncate history(conversation)
+# You can choose whether to update the Redis database or 
+# not by specifying the 'overwrite' parameter (boolean).
 
-# You can choose whether to update the Redis database or not by specifying the 'overwrite' parameter (boolean)."
 redis_db.truncate_conversation(redis_key, overwrite=True)
 
 ```
