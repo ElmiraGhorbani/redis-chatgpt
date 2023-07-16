@@ -1,5 +1,9 @@
 from setuptools import find_packages, setup
 
+project_urls = {
+  'Github': 'https://github.com/ElmiraGhorbani/redis-chatgpt',
+}
+
 setup(
     name='redis_chatgpt',
     version='0.1.0',
@@ -9,4 +13,5 @@ setup(
     install_requires=[
         'redis>=4.6.0'
     ],
+    project_urls=project_urls
 )
