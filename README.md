@@ -12,8 +12,10 @@ To build a simple data store:
 from redis_chatgpt.manager import RedisManager
 
 redis_db = RedisManager(host="localhost", port=6379)
+```
 
-# set data
+Set data
+```
 redis_key = "chat_key"
 chat_memory = [
     {
@@ -33,9 +35,9 @@ redis_db.set_data(redis_key, chat_memory)
 
 ```
 
-```
-# get data
 
+Get data
+```
 chat_history = redis_db.get_data(redis_key)
 
 ```
@@ -53,5 +55,5 @@ redis_db.truncate_conversation(redis_key, overwrite=True)
 1. Get your `OpenAI` API key [here](https://platform.openai.com/overview).
 2. Copy env.example .env (set fastapi webserver workers and openai api key)
     `cp env.example .env`
-3. docker-compose up -d
-4. http://0.0.0.0:8012/docs
+3. `docker-compose up -d`
+4. check out : `http://0.0.0.0:8012/docs`
