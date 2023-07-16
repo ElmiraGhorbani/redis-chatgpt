@@ -10,7 +10,7 @@ project_urls = {
 
 setup(
     name='redis_chatgpt',
-    version='0.1.1',
+    version='0.1.2',
     author='Elmira Ghorbani',
     description='A user-friendly package designed to save chat history conversation and truncate conversation if user exceeds max token when using OpenAI chat completion.',
     packages=find_packages(),
