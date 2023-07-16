@@ -1,5 +1,4 @@
 import logging
-import os
 
 from fastapi import FastAPI, HTTPException
 
@@ -8,7 +7,7 @@ from redis_chatgpt.manager import RedisManager
 from .openai_chatbot import ChatApp
 from .schema import ChatBotRequest
 
-redis_db = RedisManager(host="redis_mindelia", port=6379)
+redis_db = RedisManager(host="redis_chatgpt", port=6379)
 
 chat_app = ChatApp()
 
@@ -36,7 +35,7 @@ chat_responses = {
         "content": {
             "application/json": {
                 "example": {
-                    "bot_response": "you're welcome",
+                    "bot_response": "you're welcome!",
                     "chat_summary": "",
                     "data": {
                         "project_info": {
